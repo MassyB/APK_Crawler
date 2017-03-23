@@ -9,15 +9,16 @@ import re
 #moving to the dir
 #download the app
 
-GOOGLE_LOGIN = None
-GOOGLE_PASSWORD = None
-ANDROID_ID = None
+GOOGLE_LOGIN = None    # "My_google_login"
+GOOGLE_PASSWORD = None # "My_google_password"
+ANDROID_ID = None      # "My_android_device_id"
 
 def get_input_files()->list:
     """ return a list of text files containing the list of apk IDs.
         those files begin with 'topselling_free' and end with '.txt'"""
     input_file_regex = re.compile(r'topselling_free_\w+\.txt')
     list_file_names = os.listdir(os.getcwd())
+    # getting the absolute paths to the text files
     return [ os.path.join(os.getcwd(),file_name) for file_name in list_file_names if input_file_regex.search(file_name) != None]
 
 
@@ -61,4 +62,5 @@ for file_name in input_files:
               print(apk_id+" already exists")
     
     print(file_name[:-4]+ " ... all downloaded")
+    # moving to the parent directory
     os.chdir('../')
