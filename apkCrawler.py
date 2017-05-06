@@ -13,6 +13,8 @@ GOOGLE_LOGIN = None    # "My_google_login"
 GOOGLE_PASSWORD = None # "My_google_password"
 ANDROID_ID = None      # "My_android_device_id"
 
+from credentials import GOOGLE_LOGIN, GOOGLE_PASSWORD, ANDROID_ID
+
 def get_input_files()->list:
     """ return a list of text files containing the list of apk IDs.
         those files begin with 'topselling_free' and end with '.txt'"""
